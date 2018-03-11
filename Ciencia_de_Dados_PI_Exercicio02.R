@@ -365,7 +365,13 @@ lista <- list(ls())
 
 # mostra os objetos presentes na lista
 print(lista)
+# [[1]]
+# [1] "a"                "A"                "b"                "B"                "banco"            "c"               
+# [7] "cursos"           "d"                "horas_exercicios" "idades"           "lista"            "nomes"           
+# [13] "time_futebol"
 
+# mostra a classe da lista
+class(lista)
 
 
 # Divirta-se!
