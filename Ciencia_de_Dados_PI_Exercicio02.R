@@ -334,9 +334,9 @@ banco$cursos <- factor(banco$cursos, levels = c('cd', 'bioinf'), labels = c(1, 2
 # transforma a variável time_futebol em factor
 banco$time_futebol <- factor(banco$time_futebol, levels = c('Flamengo', 'Cruzeiro', 'Atlético'), labels = c(1, 2, 3))
 
-# Obs.: não descobri como fazer a conversão de 02 (duas) variaveis em factor usando uma única linha.
+# Obs. (1): não descobri como fazer a conversão de 02 (duas) variaveis em factor usando uma única linha.
 
-
+# Obs. (2): olhando novamente os códigos anotados na aula 2 da matéria de Programação Funcional e Orientada a Objetos, percebi que também há essa possibilidade 'banco$cursos <- as.factor(banco$cursos)' e, 'banco$time_futebol <- as.factor(banco$time_futebol)'
 
 # -------------------------------------------------------------------------------- #
 # 10. Acrescente, no final do banco de dados, mais uma linha com as informações de todas as variáveis para o professor.
