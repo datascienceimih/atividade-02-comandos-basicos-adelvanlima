@@ -19,7 +19,8 @@
 # -------------------------------------------------------------------------------- #
 # 1. Crie 4 vetores de tamanho 10. Esses vetores devem ser nomeados com apenas uma letra minúscula cada um.
 
-# cria um vetor de 10 elementos, a partir de uma sequencia de 1 até 10 (por padrão o R cria um vetor quando atribuimos um valor númerico ou textual a um objeto)
+# cria um vetor de 10 elementos, a partir de uma sequencia de 1 até 10 (por padrão o R cria um vetor quando atribuimos
+# um valor númerico ou textual a um objeto)
 a <- 1:10
 # [1]  1  2  3  4  5  6  7  8  9 10
 
@@ -281,7 +282,8 @@ A %*% B
 
 # -------------------------------------------------------------------------------- #
 # 6. Monte um banco de dados com os nomes de todos os seus colegas da aula de Programação Funcional e Orientada a Objetos.
-#    Coloque no banco de dados a idade de cada um, o curso que faz, o time de futebol e o número de horas gastas fazendo exercícios no R (para essa variável, use números com 2 casas decimais).
+#    Coloque no banco de dados a idade de cada um, o curso que faz, o time de futebol e o número de horas gastas fazendo
+#    exercícios no R (para essa variável, use números com 2 casas decimais).
 #    Exiba o banco no console.
 #
 # Atenção: os dados do tipo character devem ser character mesmo; não devem ser transformados automaticamente em factor.
@@ -329,29 +331,34 @@ summary(banco)
 #    Usando um comando transforme essas variáveis em factor.
 
 # transforma a variável curso em factor
-banco$cursos <- factor(banco$cursos, levels = c('cd', 'bioinf'), labels = c(1, 2))
+banco$cursos <- as.factor(banco$cursos)
+# inicialmente eu usei o código abaixo, mas resolvi voltar e alterar o código para a opção mais simples,
+# banco$cursos <- factor(banco$cursos, levels = c('cd', 'bioinf'), labels = c(1, 2))
 
 # transforma a variável time_futebol em factor
-banco$time_futebol <- factor(banco$time_futebol, levels = c('Flamengo', 'Cruzeiro', 'Atlético'), labels = c(1, 2, 3))
+banco$time_futebol <- as.factor((banco$time_futebol))
+# inicialmente eu usei o código abaixo, mas resolvi voltar e alterar o código para a opção mais simples,
+# banco$time_futebol <- factor(banco$time_futebol, levels = c('Flamengo', 'Cruzeiro', 'Atlético'), labels = c(1, 2, 3))
 
-# Obs. (1): não descobri como fazer a conversão de 02 (duas) variaveis em factor usando uma única linha.
+# Obs. (I): não descobri como fazer a conversão de 02 (duas) variaveis em factor usando uma única linha.
 
-# Obs. (2): olhando novamente os códigos anotados na aula 2 da matéria de Programação Funcional e Orientada a Objetos, percebi que também há essa possibilidade 'banco$cursos <- as.factor(banco$cursos)' e, 'banco$time_futebol <- as.factor(banco$time_futebol)'
+# Obs. (II). em relação a função factor(), a fiz com base no código de um curso online que comecei com a intenção de me acostumar mais com R,
+#           o mesmo encontra-se na pasta Pré-processamento_dos_dados no meu repositório https://github.com/adelvanlima/Machine-Learning-e-Data-Science-com-R
 
 # -------------------------------------------------------------------------------- #
 # 10. Acrescente, no final do banco de dados, mais uma linha com as informações de todas as variáveis para o professor.
 
-banco = rbind(banco, data.frame(nomes = "Neylson", idades = 30L, cursos = 1, time_futebol = 3, horas_exercicios = 17.70))
+banco = rbind(banco, data.frame(nomes = "Neylson", idades = 30L, cursos = "cd", time_futebol = "América", horas_exercicios = 17.70))
 
 banco
 #         nomes idades cursos time_futebol horas_exercicios
-# 1      Gerson     25      1            1            17.11
-# 2      Edesio     28      1            2            16.20
-# 3       Layla     25      1            3            15.10
-# 4      Nelson     39      1            3            11.16
-# 5     Fabiano     36      2            2            11.13
-# 6 Ana Beatriz     19      2            3            17.19
-# 7     Neylson     30      1            3            17.70
+# 1      Gerson     25     cd     Flamengo            17.11
+# 2      Edesio     28     cd     Cruzeiro            16.20
+# 3       Layla     25     cd     Atlético            15.10
+# 4      Nelson     39     cd     Atlético            11.16
+# 5     Fabiano     36 bioinf     Cruzeiro            11.13
+# 6 Ana Beatriz     19 bioinf     Atlético            17.19
+# 7     Neylson     30     cd      América            17.70
 
 
 
@@ -372,6 +379,7 @@ print(lista)
 
 # mostra a classe da lista
 class(lista)
+# [1] "list"
 
 
 # Divirta-se!
